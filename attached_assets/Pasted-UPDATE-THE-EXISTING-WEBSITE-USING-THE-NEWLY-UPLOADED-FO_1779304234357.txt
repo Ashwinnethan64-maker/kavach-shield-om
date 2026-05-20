@@ -1,0 +1,380 @@
+UPDATE THE EXISTING WEBSITE USING THE NEWLY UPLOADED FOUR PRODUCT IMAGES.
+
+IMPORTANT:
+You already created the first refined version of the “Kavach Shield OM” luxury landing page.
+
+Now perform a HIGH-END REFINEMENT PASS using the newly uploaded product images.
+
+==================================================
+⚠️ PRIMARY GOAL
+==================================================
+
+Transform the website into a PREMIUM, MODERN, RESPONSIVE, CONVERSION-FOCUSED luxury product website.
+
+The site should feel like:
+- Apple product launch page
+- Tesla-level minimalism
+- Luxury spiritual-tech startup
+- Premium cinematic product experience
+
+The current version is GOOD but still feels:
+- too generated
+- too stretched vertically
+- inconsistent in spacing
+- weak on mobile responsiveness
+- typography needs refinement
+- sections need stronger visual hierarchy
+- cards need better sizing
+- images need better integration
+- footer needs sophistication
+- animations need polish
+- layout needs tighter structure
+
+FIX EVERYTHING.
+
+==================================================
+🖼️ USE THE FOUR NEWLY UPLOADED IMAGES
+==================================================
+
+Use the newly uploaded 4 images professionally across the site.
+
+Image usage requirements:
+
+1. Office/lifestyle professional image
+→ Use in:
+- Trust section
+- Brand credibility section
+- “Used by professionals” area
+
+2. OM shield attached to phone image
+→ Use in:
+- Product showcase
+- Hero supporting visuals
+- Floating gallery cards
+
+3. Adhesive side-view product image
+→ Use in:
+- Installation section
+- “How it works”
+- Product craftsmanship details
+
+4. Trishul engraved close-up image
+→ Use in:
+- Premium craftsmanship section
+- Luxury materials section
+- Hover gallery showcase
+
+IMPORTANT:
+Do NOT randomly place images.
+
+Integrate them elegantly using:
+- cinematic framing
+- luxury card containers
+- subtle glow
+- layered compositions
+- hover zoom effects
+- premium masking
+- soft gradients
+- glassmorphism overlays
+
+==================================================
+🔥 HERO SECTION — COMPLETE REDESIGN
+==================================================
+
+Completely refine the hero section.
+
+Current issues:
+- typography too oversized
+- spacing imbalance
+- image composition weak
+- CTA alignment inconsistent
+- too much empty space
+
+Create:
+- cinematic split layout
+- luxury editorial typography
+- elegant responsive scaling
+- premium product spotlight
+- subtle animated gradients
+- floating particles
+- premium radial glow
+- elegant motion
+
+The hero image should feel like:
+AN APPLE PRODUCT ADVERTISEMENT.
+
+Improve:
+- CTA hierarchy
+- headline readability
+- mobile responsiveness
+- image positioning
+- section balance
+
+==================================================
+📱 RESPONSIVENESS — VERY IMPORTANT
+==================================================
+
+Make the ENTIRE WEBSITE FULLY RESPONSIVE.
+
+Fix:
+- mobile navbar
+- mobile spacing
+- typography scaling
+- card stacking
+- image overflow
+- section paddings
+- button sizing
+- feature grids
+- testimonial layout
+- pricing responsiveness
+
+Requirements:
+- no horizontal scroll
+- smooth responsive breakpoints
+- mobile-first optimization
+- premium tablet experience
+- balanced desktop layout
+
+==================================================
+🧩 FEATURES SECTION — REDESIGN
+==================================================
+
+Current cards are:
+- too large
+- too empty
+- visually repetitive
+
+Redesign into:
+- compact luxury cards
+- 2-column responsive grid
+- elegant hover effects
+- refined typography
+- glowing premium borders
+- subtle motion interactions
+
+Cards should feel:
+- premium
+- clean
+- modern
+- handcrafted
+
+==================================================
+📦 PRODUCT SHOWCASE — MAKE IT PREMIUM
+==================================================
+
+Create a TRUE luxury product showcase.
+
+Add:
+- layered image composition
+- floating specification cards
+- premium product spotlight
+- animated glow
+- hover tilt effects
+- cinematic lighting
+- smooth transitions
+
+Use uploaded product images here heavily.
+
+Product should feel:
+- collectible
+- premium
+- luxurious
+- futuristic
+
+==================================================
+🏆 TRUST SECTION — COMPLETE REWORK
+==================================================
+
+Current trust section feels repetitive and stretched.
+
+Redesign into:
+- premium trust layout
+- lifestyle imagery integration
+- compact statistics
+- refined testimonials
+- alternating layouts
+- modern spacing system
+
+Use the professional office image prominently.
+
+Make the brand feel:
+- believable
+- luxury
+- high-end
+- trusted
+
+==================================================
+⚡ HOW IT WORKS SECTION
+==================================================
+
+Current section is too stretched vertically.
+
+Redesign into:
+- elegant 3-step timeline
+OR
+- compact premium step cards
+
+Use adhesive-side image here.
+
+Add:
+- connectors
+- icon animations
+- visual process flow
+- responsive layout
+- hover effects
+
+==================================================
+💎 PRICING SECTION
+==================================================
+
+Make pricing section more premium.
+
+Improve:
+- card hierarchy
+- glow borders
+- typography
+- feature list spacing
+- CTA emphasis
+- urgency presentation
+
+Add:
+- subtle animated glow
+- premium shadows
+- luxury gradients
+
+The pricing card should feel:
+- irresistible
+- high-value
+- exclusive
+
+==================================================
+❓ FAQ SECTION
+==================================================
+
+Refine FAQ UI.
+
+Improve:
+- accordion animation
+- hover states
+- spacing
+- readability
+- typography hierarchy
+
+Should feel:
+- modern SaaS quality
+- polished
+- premium
+
+==================================================
+🖤 FOOTER — COMPLETE REDESIGN
+==================================================
+
+Current footer feels unfinished.
+
+Create:
+- luxury multi-column footer
+- refined spacing
+- elegant typography
+- social icons
+- premium branding
+- newsletter section
+- better mobile layout
+
+Footer should feel:
+- complete
+- premium
+- polished
+
+==================================================
+✨ ANIMATIONS
+==================================================
+
+Use sophisticated Framer Motion animations:
+- stagger reveals
+- fade-up transitions
+- hover interactions
+- image zoom
+- floating motion
+- scroll-triggered animations
+- premium easing
+
+Animations should feel:
+- smooth
+- elegant
+- cinematic
+- subtle
+
+NOT exaggerated.
+
+==================================================
+🎨 TYPOGRAPHY SYSTEM
+==================================================
+
+Refine typography hierarchy completely.
+
+Use:
+- luxury editorial typography
+- proper line heights
+- balanced spacing
+- responsive scaling
+- premium font pairing
+
+Headlines should feel:
+- cinematic
+- luxury
+- handcrafted
+
+==================================================
+⚡ PERFORMANCE
+==================================================
+
+Optimize:
+- image loading
+- lazy loading
+- animation performance
+- responsive image sizing
+- component structure
+
+Avoid:
+- lag
+- oversized assets
+- layout shifts
+
+==================================================
+🎯 FINAL EXPECTATION
+==================================================
+
+The final result should look like:
+- an award-winning startup landing page
+- an Apple keynote product site
+- a premium modern luxury brand
+
+It should NOT feel AI-generated.
+
+It should feel:
+- handcrafted
+- intentional
+- polished
+- production ready
+
+==================================================
+⚠️ IMPLEMENTATION RULES
+==================================================
+
+- Keep dark luxury aesthetic
+- Use black/navy/gold palette
+- Maintain clean architecture
+- Ensure accessibility
+- Keep semantic HTML
+- Maintain smooth scrolling
+- Ensure all buttons work
+- Ensure navbar works properly
+- Ensure mobile menu works
+- Replace old placeholder visuals
+- Use uploaded images professionally
+
+==================================================
+🚀 NOW EXECUTE THE COMPLETE REFINEMENT PASS
+==================================================
+
+Refactor the ENTIRE website into a production-grade luxury experience using the uploaded images.

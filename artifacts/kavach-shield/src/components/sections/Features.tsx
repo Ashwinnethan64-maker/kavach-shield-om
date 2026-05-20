@@ -44,8 +44,8 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Features() {
@@ -53,14 +53,14 @@ export default function Features() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="relative py-32 overflow-hidden">
+    <section id="features" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px]" />
       </div>
 
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -68,19 +68,19 @@ export default function Features() {
           <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-6">
             <span className="text-xs font-medium tracking-widest uppercase text-primary">What Sets Us Apart</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4">
             Crafted for the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Discerning Few
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Six pillars of excellence that elevate Kavach Shield OM beyond protection — into a philosophy of living.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -91,25 +91,29 @@ export default function Features() {
               <motion.div
                 key={feature.title}
                 variants={cardVariants}
-                whileHover={{ scale: 1.02, y: -4 }}
-                className="group relative p-8 rounded-2xl border border-white/8 bg-card/40 backdrop-blur-sm cursor-default transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_40px_rgba(212,175,55,0.08)]"
-                style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.8) 0%, rgba(5,8,22,0.9) 100%)" }}
+                className="group relative rounded-2xl overflow-hidden cursor-default"
               >
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "radial-gradient(circle at top left, rgba(212,175,55,0.06) 0%, transparent 70%)" }}
-                />
+                {/* Animated gradient border on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 group-hover:animate-spin-slow transition-opacity duration-500 rounded-2xl" style={{ padding: '1px' }}>
+                  <div className="absolute inset-[1px] rounded-[15px] bg-card z-0" style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.9) 0%, rgba(5,8,22,1) 100%)" }} />
+                </div>
 
-                <div className="relative z-10">
-                  <div className="mb-6 w-14 h-14 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                    <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                <div 
+                  className="relative z-10 p-6 h-full flex flex-col transition-all duration-300 group-hover:bg-primary/5"
+                  style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.8) 0%, rgba(5,8,22,0.9) 100%)" }}
+                >
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="mb-4 w-10 h-10 rounded-lg border border-primary/20 bg-primary/5 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                      <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                    </div>
+
+                    <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                      {feature.description}
+                    </p>
                   </div>
-
-                  <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
               </motion.div>
             );

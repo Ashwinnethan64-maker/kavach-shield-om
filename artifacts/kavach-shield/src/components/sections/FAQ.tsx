@@ -32,22 +32,22 @@ export default function FAQ() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="faq" className="relative py-32 overflow-hidden">
+    <section id="faq" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[200px]" />
       </div>
 
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-medium tracking-widest uppercase text-primary">Common Questions</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
             Questions,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Answered
@@ -62,16 +62,16 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+              className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                 openIndex === i
-                  ? "border-primary/30 shadow-[0_0_20px_rgba(212,175,55,0.08)]"
+                  ? "border-primary/30 shadow-[0_0_20px_rgba(212,175,55,0.08)] border-l-2 border-l-primary"
                   : "border-white/8 hover:border-white/15"
               }`}
               style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.85), rgba(5,8,22,0.9))" }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-6 text-left group"
+                className="w-full flex items-center justify-between p-5 text-left group"
                 data-testid={`faq-toggle-${i}`}
               >
                 <span className={`font-serif font-semibold text-base transition-colors ${
@@ -96,8 +96,8 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 border-t border-white/5">
-                      <p className="text-sm text-muted-foreground leading-relaxed pt-4">
+                    <div className="px-5 pb-5 border-t border-white/5">
+                      <p className="text-sm text-muted-foreground leading-relaxed pt-3">
                         {faq.answer}
                       </p>
                     </div>
