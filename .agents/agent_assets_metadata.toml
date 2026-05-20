@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "GEz3D_jI5NTbovpQw973v"
+uri = "file://artifacts/kavach-shield/src/assets/images/kavach-shield.png"
+type = "image"
+title = "Kavach Shield OM Device"
