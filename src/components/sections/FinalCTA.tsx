@@ -3,20 +3,22 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import shungiteMacro from "@/assets/images/shungite-macro.png";
+import shungiteMacro from "@/assets/images/shungite-macro.webp";
 
 export default function FinalCTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-20 overflow-hidden min-h-[450px] flex items-center">
+    <section className="relative py-14 overflow-hidden min-h-[450px] flex items-center">
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={shungiteMacro} 
           alt="Shungite Texture Background" 
-          className="w-full h-full object-cover opacity-10 blur-xl scale-110" 
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover opacity-10 scale-110" 
         />
         <div className="absolute inset-0 bg-background/60" />
       </div>

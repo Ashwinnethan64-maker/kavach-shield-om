@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import trishulShield from "@/assets/images/trishul-shield.png";
+import trishulShield from "@/assets/images/trishul-shield.webp";
 
 export default function Hero() {
   const particles = Array.from({ length: 15 });
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden" id="hero">
-      {/* Ambient background glows */}
+      {/* Ambient background glows - optimized for performance */}
       <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/25 rounded-full blur-[120px] pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-full md:blur-[120px] blur-[80px] pointer-events-none"
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-secondary/15 rounded-full blur-[150px] pointer-events-none"
-        style={{ transform: "translate(50%, 50%)" }}
+        className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-[30rem] md:h-[30rem] bg-secondary/10 rounded-full md:blur-[150px] blur-[100px] pointer-events-none"
+        style={{ transform: "translate(50%, 50%)", willChange: "transform" }}
       />
       
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Floating particles - reduced count and complexity on mobile */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden sm:block">
         {particles.map((_, i) => (
           <motion.div
             key={i}
@@ -100,26 +100,27 @@ export default function Hero() {
 
         <motion.div 
           className="relative h-[220px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2"
-          initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full max-w-[320px] sm:max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
+          <div className="relative w-full h-full max-w-[320px] sm:max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-2xl xl:shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
             <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-90 z-10" />
             <img 
               src={trishulShield} 
               alt="Kavach Shield Trishul Edition" 
-              className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-[3s]"
+              className="w-full h-full object-cover transform md:hover:scale-105 transition-transform duration-[3s]"
               loading="eager"
               fetchPriority="high"
+              decoding="async"
             />
             {/* Cinematic border glow */}
             <div className="absolute inset-0 border border-primary/20 rounded-[2rem] z-20 pointer-events-none" />
           </div>
           
-          {/* Decorative element */}
-          <div className="absolute -z-10 w-[120%] h-[120%] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-50 animate-pulse" />
+          {/* Decorative element - Hidden on mobile for performance */}
+          <div className="hidden sm:block absolute -z-10 w-[120%] h-[120%] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" style={{ willChange: 'opacity' }} />
         </motion.div>
       </div>
 

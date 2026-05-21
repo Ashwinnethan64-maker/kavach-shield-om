@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import trishulShield from "@/assets/images/trishul-shield.png";
-import professionalLifestyle from "@/assets/images/professional-lifestyle.png";
-import shungiteMacro from "@/assets/images/shungite-macro.png";
+import trishulShield from "@/assets/images/trishul-shield.webp";
+import professionalLifestyle from "@/assets/images/professional-lifestyle.webp";
+import shungiteMacro from "@/assets/images/shungite-macro.webp";
 
 const specs = [
   { label: "Material", value: "Elite Shungite" },
@@ -96,8 +96,9 @@ export default function Showcase() {
                 <img 
                   src={shungiteMacro} 
                   alt="Elite Shungite Macro" 
-                  className="w-full h-full object-cover rounded-lg md:rounded-xl"
                   loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover rounded-lg md:rounded-xl"
                 />
               </motion.div>
               

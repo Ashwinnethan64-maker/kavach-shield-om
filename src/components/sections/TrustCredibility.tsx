@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect, lazy, Suspense } from "react";
 import { Star } from "lucide-react";
-import professionalLifestyle from "@/assets/images/professional-lifestyle.png";
-import omShieldPhone from "@/assets/images/om-shield-phone.png";
+import professionalLifestyle from "@/assets/images/professional-lifestyle.webp";
+import omShieldPhone from "@/assets/images/om-shield-phone.webp";
 
 const testimonials = [
   {

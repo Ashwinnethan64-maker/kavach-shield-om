@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Paperclip, Radio, ShieldCheck } from "lucide-react";
-import omShieldPhone from "@/assets/images/om-shield-phone.png";
+import omShieldPhone from "@/assets/images/om-shield-phone.webp";
 
 interface Step {
   step: string;
@@ -81,6 +81,8 @@ export default function HowItWorks() {
               <img 
                 src={omShieldPhone} 
                 alt="Kavach Shield Horizontal Showcase" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-center transform transition-transform duration-[8s] group-hover:scale-105" 
               />
               
@@ -151,3 +153,4 @@ export default function HowItWorks() {
     </section>
   );
 }
+

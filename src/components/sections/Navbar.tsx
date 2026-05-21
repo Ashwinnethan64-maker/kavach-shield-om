@@ -8,11 +8,19 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let timeoutId: number;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (timeoutId) return;
+      timeoutId = window.setTimeout(() => {
+        setScrolled(window.scrollY > 50);
+        timeoutId = 0;
+      }, 50); // Basic throttle for scroll performance
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const navLinks = ["Features", "Showcase", "Testimonials", "Pricing", "FAQ"];

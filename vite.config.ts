@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -13,6 +14,12 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    ViteImageOptimizer({
+      png: { quality: 80, compressionLevel: 8 },
+      jpeg: { quality: 80 },
+      jpg: { quality: 80 },
+      webp: { quality: 80, lossless: false },
+    }),
   ],
   resolve: {
     alias: {
@@ -25,11 +32,14 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     reportCompressedSize: false,
+    minify: "esbuild",
+    cssMinify: true,
+    target: "esnext",
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
-        },
+          vendor: ["react", "react-dom", "framer-motion", "lucide-react"],
+        }
       },
     },
   },
