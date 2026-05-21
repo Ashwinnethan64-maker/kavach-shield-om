@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import trishulShield from "@/assets/images/trishul-shield.webp";
+import trishulShieldMobile from "@/assets/images/trishul-shield-mobile.webp";
+import trishulShieldTablet from "@/assets/images/trishul-shield-tablet.webp";
 
 export default function Hero() {
   const particles = Array.from({ length: 15 });
@@ -107,14 +109,20 @@ export default function Hero() {
           <div className="relative w-full h-full max-w-[320px] sm:max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-2xl xl:shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
             <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-90 z-10" />
-            <img 
-              src={trishulShield} 
-              alt="Kavach Shield Trishul Edition" 
-              className="w-full h-full object-cover transform md:hover:scale-105 transition-transform duration-[3s]"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
+            <picture>
+              <source srcSet={trishulShieldMobile} media="(max-width: 639px)" />
+              <source srcSet={trishulShieldTablet} media="(max-width: 1023px)" />
+              <img 
+                src={trishulShield} 
+                alt="Kavach Shield Trishul Edition" 
+                className="w-full h-full object-cover transform md:hover:scale-105 transition-transform duration-[3s]"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width="800"
+                height="800"
+              />
+            </picture>
             {/* Cinematic border glow */}
             <div className="absolute inset-0 border border-primary/20 rounded-[2rem] z-20 pointer-events-none" />
           </div>

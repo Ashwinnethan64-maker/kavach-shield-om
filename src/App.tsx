@@ -1,19 +1,24 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import Navbar from "./components/sections/Navbar";
 import Hero from "./components/sections/Hero";
 import Features from "./components/sections/Features";
-import Showcase from "./components/sections/Showcase";
-import TrustCredibility from "./components/sections/TrustCredibility";
-import HowItWorks from "./components/sections/HowItWorks";
-import Pricing from "./components/sections/Pricing";
-import FAQ from "./components/sections/FAQ";
-import FinalCTA from "./components/sections/FinalCTA";
-import Footer from "./components/sections/Footer";
+
+// Lazy load non-critical sections
+const Showcase = lazy(() => import("./components/sections/Showcase"));
+const TrustCredibility = lazy(() => import("./components/sections/TrustCredibility"));
+const HowItWorks = lazy(() => import("./components/sections/HowItWorks"));
+const Pricing = lazy(() => import("./components/sections/Pricing"));
+const FAQ = lazy(() => import("./components/sections/FAQ"));
+const FinalCTA = lazy(() => import("./components/sections/FinalCTA"));
+const Footer = lazy(() => import("./components/sections/Footer"));
 
 const queryClient = new QueryClient();
+
+// Loading placeholder to prevent layout shifts
+const SectionPlaceholder = () => <div className="min-h-[400px]" />;
 
 function Home() {
   return (
@@ -22,14 +27,28 @@ function Home() {
       <main>
         <Hero />
         <Features />
-        <Showcase />
-        <TrustCredibility />
-        <HowItWorks />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
+        <Suspense fallback={<SectionPlaceholder />}>
+          <Showcase />
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <TrustCredibility />
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <HowItWorks />
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <Pricing />
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <FAQ />
+        </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <FinalCTA />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<div className="h-20" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
