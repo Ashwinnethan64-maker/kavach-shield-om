@@ -80,7 +80,7 @@ export default function Features() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -91,33 +91,34 @@ export default function Features() {
               <motion.div
                 key={feature.title}
                 variants={cardVariants}
-                className="group relative rounded-[1.5rem] overflow-hidden cursor-default transition-all duration-700"
+                whileTap={{ scale: 0.98 }}
+                className="group relative rounded-[1.5rem] overflow-hidden cursor-default transition-all duration-700 active:bg-primary/5"
               >
                 {/* Gold Glow Base */}
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-1000" />
                 
                 {/* Animated gradient border on hover */}
-                <div className="absolute inset-0 bg-white/10 group-hover:bg-gradient-to-br group-hover:from-primary/40 group-hover:via-primary/5 group-hover:to-primary/40 transition-all duration-700" style={{ padding: '1px' }}>
+                <div className="absolute inset-0 bg-white/10 group-hover:bg-gradient-to-br group-hover:from-primary/40 group-hover:via-primary/5 group-hover:to-primary/40 group-active:from-primary/30 transition-all duration-700" style={{ padding: '1px' }}>
                   <div className="absolute inset-0 rounded-[1.5rem] bg-card z-0" style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.95) 0%, rgba(5,8,22,1) 100%)" }} />
                 </div>
 
                 <div 
-                  className="relative z-10 p-8 h-full flex flex-col transition-all duration-700 group-hover:translate-y-[-4px]"
+                  className="relative z-10 p-6 md:p-8 h-full flex flex-col transition-all duration-700 group-hover:translate-y-[-4px] group-active:translate-y-0"
                 >
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className="mb-6 w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary group-hover:text-black transition-all duration-700 shadow-inner group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                      <Icon className="w-6 h-6 transition-transform duration-700 group-hover:scale-110" strokeWidth={1.5} />
+                    <div className="mb-5 md:mb-6 w-12 h-12 md:w-14 md:h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary group-hover:text-black group-active:bg-primary/80 transition-all duration-700 shadow-inner group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                      <Icon className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-700 group-hover:scale-110" strokeWidth={1.5} />
                     </div>
 
-                    <h3 className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-500">
+                    <h3 className="text-lg md:text-xl font-serif font-bold text-foreground mb-2 md:mb-3 group-hover:text-primary transition-colors duration-500">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
                       {feature.description}
                     </p>
                     
                     {/* Stealth interactive indicator */}
-                    <div className="mt-6 h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-primary to-transparent transition-all duration-1000 ease-out" />
+                    <div className="mt-5 md:mt-6 h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-primary to-transparent transition-all duration-1000 ease-out" />
                   </div>
                 </div>
               </motion.div>

@@ -89,16 +89,16 @@ export default function Navbar() {
               </button>
             </div>
             
-            <div className="flex flex-col items-center justify-center flex-1 gap-8 pb-20">
-              {navLinks.map((item) => (
+            <div className="flex flex-col items-center justify-center flex-1 gap-6 pb-20 px-6">
+              {navLinks.map((item, i) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+                  className="text-xl sm:text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors text-center w-full py-2 border-b border-white/5 active:bg-white/5 rounded-lg"
                   onClick={() => setMobileMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
+                  transition={{ duration: 0.3, delay: 0.05 * i }}
                 >
                   {item}
                 </motion.a>
@@ -107,12 +107,12 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                className="pt-8"
+                transition={{ duration: 0.3, delay: 0.4 }}
+                className="pt-8 w-full max-w-[200px]"
               >
                 <Button 
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-10 h-14 shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-12 md:h-14 shadow-[0_0_20px_rgba(212,175,55,0.4)] active:scale-95 transition-transform"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Buy Now

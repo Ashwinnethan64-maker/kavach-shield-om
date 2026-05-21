@@ -46,16 +46,16 @@ export default function Hero() {
       {/* Noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center z-10 pt-24 pb-16 max-w-7xl">
+      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center z-10 pt-20 pb-12 md:pt-24 md:pb-16 max-w-7xl">
         <motion.div 
-          className="flex flex-col gap-5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
+          className="flex flex-col gap-4 md:gap-5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
           <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm rounded-full px-4 py-1.5 w-fit">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">Premium EMF Protection</span>
+            <span className="text-[10px] md:text-xs font-medium tracking-widest uppercase text-muted-foreground">Premium EMF Protection</span>
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] tracking-tight">
@@ -65,43 +65,45 @@ export default function Hero() {
             </span>
           </h1>
           
-          <p className="text-base text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
             Luxury EMF protection crafted with sacred symbolism and premium shungite materials. Designed for those who demand both energetic purity and aesthetic perfection.
           </p>
           
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
-            <Button size="lg" className="h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95">
+          <div className="flex flex-row items-center justify-center lg:justify-start gap-3 w-full sm:w-auto pt-2">
+            <Button size="lg" className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95">
               Buy Now
             </Button>
-            <Button size="lg" variant="outline" className="h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-base transition-all group active:scale-95">
-              Explore Features
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button size="lg" variant="outline" className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-sm sm:text-base transition-all group active:scale-95">
+              Explore
+              <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
-          <div className="mt-10 pt-6 border-t border-white/10 w-full lg:w-fit">
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-3 font-semibold opacity-60">As seen in</p>
+          <div className="mt-8 pt-6 border-t border-white/10 w-full lg:w-fit">
+            <p className="text-[9px] uppercase tracking-widest text-muted-foreground mb-3 font-semibold opacity-60">As seen in</p>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-              <span className="font-serif font-bold text-lg">Forbes</span>
-              <span className="font-sans font-bold text-lg tracking-tighter">Economic Times</span>
-              <span className="font-serif italic text-lg">TOI</span>
+              <span className="font-serif font-bold text-base md:text-lg">Forbes</span>
+              <span className="font-sans font-bold text-base md:text-lg tracking-tighter">Economic Times</span>
+              <span className="font-serif italic text-base md:text-lg">TOI</span>
             </div>
           </div>
         </motion.div>
 
         <motion.div 
-          className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2"
+          className="relative h-[220px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2"
           initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
+          <div className="relative w-full h-full max-w-[320px] sm:max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
             <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-90 z-10" />
             <img 
               src={trishulShield} 
               alt="Kavach Shield Trishul Edition" 
               className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-[3s]"
+              loading="eager"
+              fetchPriority="high"
             />
             {/* Cinematic border glow */}
             <div className="absolute inset-0 border border-primary/20 rounded-[2rem] z-20 pointer-events-none" />

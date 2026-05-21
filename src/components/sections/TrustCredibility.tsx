@@ -114,36 +114,37 @@ export default function TrustCredibility() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="relative w-full max-w-4xl mx-auto aspect-[16/10] md:aspect-[2.4/1] rounded-[2rem] overflow-hidden mb-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10 group"
+          className="relative w-full max-w-4xl mx-auto aspect-[16/10] md:aspect-[2.4/1] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10 group"
         >
           <img 
             src={omShieldPhone} 
             alt="Kavach Shield on Device" 
             className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-[3s] ease-out" 
             loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           
           {/* Minimized luxury overlay card */}
-          <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-card/40 backdrop-blur-2xl border border-white/10 rounded-2xl p-3 md:p-4.5 shadow-2xl max-w-[190px] md:max-w-[240px] group/card hover:bg-card/50 transition-all duration-500">
-            <div className="flex gap-0.5 mb-2">
+          <div className="absolute bottom-2 right-2 md:bottom-8 md:right-8 bg-card/60 backdrop-blur-2xl border border-white/10 rounded-xl md:rounded-2xl p-2.5 md:p-4.5 shadow-2XL max-w-[150px] sm:max-w-[180px] md:max-w-[240px] group/card hover:bg-card/70 transition-all duration-500 z-20">
+            <div className="flex gap-0.5 mb-1.5 md:mb-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-2 md:w-2.5 h-2 md:h-2.5 fill-primary text-primary" />
+                <Star key={i} className="w-1.5 md:w-2.5 h-1.5 md:h-2.5 fill-primary text-primary" />
               ))}
             </div>
-            <p className="text-[10px] md:text-[12px] font-serif font-medium text-white/90 italic leading-snug">
+            <p className="text-[9px] md:text-[12px] font-serif font-medium text-white/90 italic leading-snug">
               "Finally, a product that values my health as much as my style. The energetic shift is palpable."
             </p>
-            <div className="mt-3 flex items-center gap-2">
-              <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-[9px] md:text-[11px]">AK</div>
+            <div className="mt-2 md:mt-3 flex items-center gap-1.5 md:gap-2">
+              <div className="w-4 h-4 md:w-7 md:h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-[7px] md:text-[11px]">AK</div>
               <div>
-                <p className="text-[8px] md:text-[9.5px] font-bold text-white uppercase tracking-tighter">Ananya Kapoor</p>
-                <p className="text-[7px] md:text-[8px] text-primary/80 font-medium">Holistic Designer</p>
+                <p className="text-[7px] md:text-[9.5px] font-bold text-white uppercase tracking-tighter leading-none mb-0.5">Ananya Kapoor</p>
+                <p className="text-[6px] md:text-[8px] text-primary/80 font-medium leading-none">Holistic Designer</p>
               </div>
             </div>
           </div>
           {/* Subtle gold border glow */}
-          <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none" />
+          <div className="absolute inset-0 border border-white/10 rounded-[1.5rem] md:rounded-[2rem] pointer-events-none" />
         </motion.div>
 
         {/* Stats */}
