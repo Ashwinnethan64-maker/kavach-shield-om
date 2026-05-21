@@ -36,7 +36,7 @@ export default function Showcase() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="showcase" className="relative py-18 overflow-hidden">
+    <section id="showcase" className="relative py-14 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[180px]" />
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
@@ -44,7 +44,7 @@ export default function Showcase() {
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -52,7 +52,7 @@ export default function Showcase() {
           <div className="inline-flex items-center gap-2 border border-secondary/20 bg-secondary/5 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-medium tracking-widest uppercase text-secondary">Product Details</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3.5xl font-serif font-bold text-foreground mb-4">
             Precision in Every{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
               Detail

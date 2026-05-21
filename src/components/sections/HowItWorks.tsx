@@ -40,7 +40,7 @@ export default function HowItWorks() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="how-it-works" className="relative py-18 md:py-24 overflow-hidden bg-background">
+    <section id="how-it-works" className="relative py-14 md:py-18 overflow-hidden bg-background">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
@@ -49,7 +49,7 @@ export default function HowItWorks() {
       <div className="container mx-auto px-6 relative z-10 max-w-7xl" ref={ref}>
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -57,13 +57,13 @@ export default function HowItWorks() {
           <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Simple. Powerful.</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+          <h2 className="text-3xl md:text-[2.75rem] font-serif font-bold text-foreground mb-4 leading-tight">
             Three Steps to <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#FDE08B] to-primary">
               Sacred Protection
             </span>
           </h2>
-          <p className="text-muted-foreground text-xs md:text-base max-w-xl mx-auto opacity-70 leading-relaxed font-sans">
+          <p className="text-muted-foreground text-xs md:text-sm max-w-xl mx-auto opacity-70 leading-relaxed font-sans">
             Expert protection for those who settle for nothing less than absolute energetic clarity.
           </p>
         </motion.div>

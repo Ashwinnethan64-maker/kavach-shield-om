@@ -46,33 +46,33 @@ export default function Hero() {
       {/* Noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center z-10 pt-20 pb-12 md:pt-24 md:pb-16 max-w-7xl">
+      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center z-10 pt-16 pb-12 md:pt-20 md:pb-14 max-w-7xl">
         <motion.div 
-          className="flex flex-col gap-4 md:gap-5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
+          className="flex flex-col gap-3.5 md:gap-4.5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm rounded-full px-4 py-1.5 w-fit">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] md:text-xs font-medium tracking-widest uppercase text-muted-foreground">Premium EMF Protection</span>
+          <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm rounded-full px-3.5 py-1 w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-muted-foreground">Premium EMF Protection</span>
           </div>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-serif font-bold leading-[1.05] tracking-tight">
             Sacred Protection <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#FDE08B] to-primary">
               for the Modern World
             </span>
           </h1>
           
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
+          <p className="text-sm md:text-base text-muted-foreground/90 leading-relaxed max-w-lg mx-auto lg:mx-0">
             Luxury EMF protection crafted with sacred symbolism and premium shungite materials. Designed for those who demand both energetic purity and aesthetic perfection.
           </p>
           
-          <div className="flex flex-row items-center justify-center lg:justify-start gap-3 w-full sm:w-auto pt-2">
+          <div className="flex flex-row items-center justify-center lg:justify-start gap-2.5 w-full sm:w-auto pt-1.5">
             <Button 
               size="lg" 
-              className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95"
+              className="flex-1 sm:flex-none h-10.5 px-6 sm:h-11.5 sm:px-7 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all hover:scale-105 active:scale-95"
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Buy Now
@@ -80,20 +80,20 @@ export default function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-sm sm:text-base transition-all group active:scale-95"
+              className="flex-1 sm:flex-none h-10.5 px-6 sm:h-11.5 sm:px-7 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-sm transition-all group active:scale-95"
               onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore
-              <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-1.5 w-3 h-3 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/10 w-full lg:w-fit">
-            <p className="text-[9px] uppercase tracking-widest text-muted-foreground mb-3 font-semibold opacity-60">As seen in</p>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-              <span className="font-serif font-bold text-base md:text-lg">Forbes</span>
-              <span className="font-sans font-bold text-base md:text-lg tracking-tighter">Economic Times</span>
-              <span className="font-serif italic text-base md:text-lg">TOI</span>
+          <div className="mt-6 pt-5 border-t border-white/10 w-full lg:w-fit">
+            <p className="text-[8px] uppercase tracking-widest text-muted-foreground mb-2.5 font-semibold opacity-50">As seen in</p>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 md:gap-7 opacity-35 grayscale hover:grayscale-0 transition-all duration-500">
+              <span className="font-serif font-bold text-sm md:text-base">Forbes</span>
+              <span className="font-sans font-bold text-sm md:text-base tracking-tighter">Economic Times</span>
+              <span className="font-serif italic text-sm md:text-base">TOI</span>
             </div>
           </div>
         </motion.div>

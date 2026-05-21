@@ -86,14 +86,14 @@ export default function TrustCredibility() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="testimonials" className="relative py-20 overflow-hidden">
+    <section id="testimonials" className="relative py-14 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -101,7 +101,7 @@ export default function TrustCredibility() {
           <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-medium tracking-widest uppercase text-primary">Trusted Worldwide</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-3.5xl font-serif font-bold text-foreground mb-4">
             Worn by Those Who{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Know Better
@@ -114,7 +114,7 @@ export default function TrustCredibility() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="relative w-full max-w-4xl mx-auto aspect-[16/10] md:aspect-[2.4/1] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10 group"
+          className="relative w-full max-w-4xl mx-auto aspect-[16/10] md:aspect-[2.5/1] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10 group"
         >
           <img 
             src={omShieldPhone} 
@@ -126,17 +126,17 @@ export default function TrustCredibility() {
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           
           {/* Minimized luxury overlay card */}
-          <div className="absolute bottom-2 right-2 md:bottom-8 md:right-8 bg-card/60 backdrop-blur-2xl border border-white/10 rounded-xl md:rounded-2xl p-2.5 md:p-4.5 shadow-2XL max-w-[150px] sm:max-w-[180px] md:max-w-[240px] group/card hover:bg-card/70 transition-all duration-500 z-20">
+          <div className="absolute bottom-2 right-2 md:bottom-8 md:right-8 bg-card/60 backdrop-blur-2xl border border-white/10 rounded-xl md:rounded-2xl p-2.5 md:p-3.5 shadow-2XL max-w-[150px] sm:max-w-[180px] md:max-w-[220px] group/card hover:bg-card/70 transition-all duration-500 z-20">
             <div className="flex gap-0.5 mb-1.5 md:mb-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-1.5 md:w-2.5 h-1.5 md:h-2.5 fill-primary text-primary" />
+                <Star key={i} className="w-1.5 md:w-2 h-1.5 md:h-2 fill-primary text-primary" />
               ))}
             </div>
-            <p className="text-[9px] md:text-[12px] font-serif font-medium text-white/90 italic leading-snug">
+            <p className="text-[9px] md:text-[11px] font-serif font-medium text-white/90 italic leading-snug">
               "Finally, a product that values my health as much as my style. The energetic shift is palpable."
             </p>
-            <div className="mt-2 md:mt-3 flex items-center gap-1.5 md:gap-2">
-              <div className="w-4 h-4 md:w-7 md:h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-[7px] md:text-[11px]">AK</div>
+            <div className="mt-2 md:mt-2.5 flex items-center gap-1.5 md:gap-2">
+              <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-[7px] md:text-[10px]">AK</div>
               <div>
                 <p className="text-[7px] md:text-[9.5px] font-bold text-white uppercase tracking-tighter leading-none mb-0.5">Ananya Kapoor</p>
                 <p className="text-[6px] md:text-[8px] text-primary/80 font-medium leading-none">Holistic Designer</p>
@@ -148,52 +148,52 @@ export default function TrustCredibility() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="text-center p-6 md:p-8 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-500 group"
+              className="text-center p-5 md:p-6 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-500 group"
               style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.7), rgba(5,8,22,0.8))" }}
             >
-              <div className="text-3xl md:text-4xl font-serif font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-500">
+              <div className="text-2.5xl md:text-3xl font-serif font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-500">
                 <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
               </div>
-              <div className="text-[11px] md:text-xs text-muted-foreground uppercase tracking-[0.2em] font-medium">{stat.label}</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-[0.2em] font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-12 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              className="group p-6 md:p-8 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/25 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 flex flex-col justify-between"
+              className="group p-5 md:p-7 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/25 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 flex flex-col justify-between"
               style={{ background: "linear-gradient(145deg, rgba(11,16,35,0.92), rgba(5,8,22,0.98))" }}
             >
               <div>
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3.5">
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
                   ))}
                 </div>
-                <blockquote className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 italic opacity-90 group-hover:opacity-100 transition-opacity">
+                <blockquote className="text-sm md:text-[14px] text-muted-foreground leading-relaxed mb-5 italic opacity-90 group-hover:opacity-100 transition-opacity">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
               </div>
-              <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shadow-inner">
-                  <span className="text-[11px] font-bold text-primary">{t.initials}</span>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shadow-inner">
+                  <span className="text-[10px] font-bold text-primary">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-foreground tracking-tight">{t.name}</div>
-                  <div className="text-[10px] md:text-xs text-primary/70 font-medium uppercase tracking-wider">{t.role}</div>
+                  <div className="text-[13px] font-bold text-foreground tracking-tight">{t.name}</div>
+                  <div className="text-[9px] md:text-[10.5px] text-primary/70 font-medium uppercase tracking-wider">{t.role}</div>
                 </div>
               </div>
             </motion.div>

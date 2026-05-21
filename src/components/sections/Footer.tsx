@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Instagram, Twitter, Youtube, Mail, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/kavach_shield_om.png";
 
 const socialLinks = [
   { icon: Instagram, label: "Instagram", href: "#" },
@@ -52,9 +51,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Info */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4 footer-logo-container">
-              <div className="flex items-center justify-center w-8 h-8">
-                <img src={logo} alt="Kavach Shield Logo" className="w-full h-full object-contain" />
+            <div className="flex items-center gap-2 mb-4 footer-logo-container">
+              <div className="w-6.5 h-6.5 rounded-full border border-primary/40 flex items-center justify-center bg-primary/10 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                <span className="font-serif text-primary font-bold text-[10px]">OM</span>
               </div>
               <span className="font-serif text-base font-bold tracking-wider text-foreground">Kavach Shield</span>
             </div>
