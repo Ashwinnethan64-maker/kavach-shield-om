@@ -1,3 +1,39 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded Square Background for better visibility in different modes -->
+  <rect width="512" height="512" rx="100" fill="#050816"/>
+  
+  <!-- Thick Gold Shield Shape - Simplified for small sizes -->
+  <path d="M256 60 C180 60 110 100 110 220 C110 330 200 440 256 470 C312 440 402 330 402 220 C402 100 332 60 256 60Z" 
+        fill="none" 
+        stroke="#D4AF37" 
+        stroke-width="36" 
+        stroke-linejoin="round"/>
+  
+  <!-- Bold Trishul Symbol - Highly readable when scaled down -->
+  <g fill="#D4AF37">
+    <!-- Center Column -->
+    <rect x="238" y="160" width="36" height="210" rx="4"/>
+    <!-- Center Tip -->
+    <path d="M256 100 L290 160 L222 160 Z"/>
+    
+    <!-- Left Curve -->
+    <path d="M238 290 C170 290 145 250 145 210" 
+          fill="none" 
+          stroke="#D4AF37" 
+          stroke-width="32" 
+          stroke-linecap="round"/>
+    <path d="M145 170 L175 220 L115 220 Z"/>
+    
+    <!-- Right Curve -->
+    <path d="M274 290 C342 290 367 250 367 210" 
+          fill="none" 
+          stroke="#D4AF37" 
+          stroke-width="32" 
+          stroke-linecap="round"/>
+    <path d="M367 170 L337 220 L397 220 Z"/>
+    
+    <!-- Central Node (Representative of OM energy center) -->
+    <circle cx="256" cy="310" r="50" fill="#050816" stroke="#D4AF37" stroke-width="16"/>
+    <circle cx="256" cy="310" r="15" fill="#D4AF37"/>
+  </g>
 </svg>
