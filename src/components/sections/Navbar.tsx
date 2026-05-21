@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/kavach_shield_om.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,9 +31,9 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-7xl">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="w-7 h-7 rounded-full border border-primary/50 flex items-center justify-center bg-card shadow-[0_0_15px_rgba(212,175,55,0.2)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:border-primary transition-all duration-300">
-              <span className="font-serif text-primary font-bold text-xs">OM</span>
+          <div className="flex items-center gap-2.5 cursor-pointer group">
+            <div className="flex items-center justify-center w-8 h-8 transition-all duration-300 group-hover:scale-110">
+              <img src={logo} alt="Kavach Shield Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-serif text-base md:text-lg font-bold tracking-wider text-foreground group-hover:text-primary transition-colors">
               Kavach Shield
