@@ -13,10 +13,11 @@ export default defineConfig({
   plugins: [
     react(),
     ViteImageOptimizer({
-      png: { quality: 80, compressionLevel: 8 },
-      jpeg: { quality: 80 },
-      jpg: { quality: 80 },
-      webp: { quality: 80, lossless: false },
+      png: { quality: 70, compressionLevel: 9 },
+      jpeg: { quality: 70 },
+      jpg: { quality: 70 },
+      webp: { quality: 70, lossless: false, effort: 6 },
+      avif: { quality: 60, effort: 6 },
     }),
   ],
   resolve: {
@@ -32,12 +33,13 @@ export default defineConfig({
     reportCompressedSize: false,
     minify: "esbuild",
     cssMinify: true,
+    cssCodeSplit: true,
+    modulePreload: {
+      polyfill: true
+    },
     target: "esnext",
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "framer-motion", "lucide-react"],
-        }
       },
     },
   },

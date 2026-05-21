@@ -18,7 +18,11 @@ const Footer = lazy(() => import("./components/sections/Footer"));
 const queryClient = new QueryClient();
 
 // Loading placeholder to prevent layout shifts
-const SectionPlaceholder = () => <div className="min-h-[400px]" />;
+const SectionPlaceholder = () => (
+  <div className="min-h-[300px] w-full flex items-center justify-center opacity-0 animate-in fade-in duration-500">
+    <div className="w-8 h-8 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+  </div>
+);
 
 function Home() {
   return (
@@ -28,22 +32,34 @@ function Home() {
         <Hero />
         <Features />
         <Suspense fallback={<SectionPlaceholder />}>
-          <Showcase />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <Showcase />
+          </section>
         </Suspense>
         <Suspense fallback={<SectionPlaceholder />}>
-          <TrustCredibility />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <TrustCredibility />
+          </section>
         </Suspense>
         <Suspense fallback={<SectionPlaceholder />}>
-          <HowItWorks />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <HowItWorks />
+          </section>
         </Suspense>
         <Suspense fallback={<SectionPlaceholder />}>
-          <Pricing />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <Pricing />
+          </section>
         </Suspense>
         <Suspense fallback={<SectionPlaceholder />}>
-          <FAQ />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <FAQ />
+          </section>
         </Suspense>
         <Suspense fallback={<SectionPlaceholder />}>
-          <FinalCTA />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <FinalCTA />
+          </section>
         </Suspense>
       </main>
       <Suspense fallback={<div className="h-20" />}>

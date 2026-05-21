@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import shungiteMacro from "@/assets/images/shungite-macro.webp";
+import shungiteMacroMobile from "@/assets/images/shungite-macro-mobile.webp";
 
 export default function FinalCTA() {
   const ref = useRef(null);
@@ -13,13 +14,18 @@ export default function FinalCTA() {
     <section className="relative py-14 overflow-hidden min-h-[450px] flex items-center">
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={shungiteMacro} 
-          alt="Shungite Texture Background" 
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover opacity-10 scale-110" 
-        />
+        <picture>
+          <source srcSet={shungiteMacroMobile} media="(max-width: 639px)" width="480" />
+          <img 
+            src={shungiteMacro} 
+            alt="Shungite Texture Background" 
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover opacity-10 scale-110" 
+            width="1200"
+            height="800"
+          />
+        </picture>
         <div className="absolute inset-0 bg-background/60" />
       </div>
 

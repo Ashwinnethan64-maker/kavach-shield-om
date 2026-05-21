@@ -3,7 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import trishulShield from "@/assets/images/trishul-shield.webp";
 import professionalLifestyle from "@/assets/images/professional-lifestyle.webp";
+import professionalLifestyleMobile from "@/assets/images/professional-lifestyle-mobile.webp";
 import shungiteMacro from "@/assets/images/shungite-macro.webp";
+import shungiteMacroMobile from "@/assets/images/shungite-macro-mobile.webp";
 
 const specs = [
   { label: "Material", value: "Elite Shungite" },
@@ -77,13 +79,18 @@ export default function Showcase() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.6 }}
               >
-                <img 
-                  src={professionalLifestyle} 
-                  alt="Professional using Kavach Shield" 
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source srcSet={professionalLifestyleMobile} media="(max-width: 639px)" width="480" />
+                  <img 
+                    src={professionalLifestyle} 
+                    alt="Professional using Kavach Shield" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="800"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </motion.div>
 
@@ -93,13 +100,18 @@ export default function Showcase() {
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -right-2 sm:-right-4 md:-right-8 bottom-4 w-32 sm:w-40 md:w-52 aspect-square rounded-xl md:rounded-2xl overflow-hidden border border-primary/30 shadow-[0_15px_40px_rgba(212,175,55,0.25)] z-30 bg-card/80 backdrop-blur-xl p-2 md:p-2.5"
               >
-                <img 
-                  src={shungiteMacro} 
-                  alt="Elite Shungite Macro" 
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover rounded-lg md:rounded-xl"
-                />
+                <picture>
+                  <source srcSet={shungiteMacroMobile} media="(max-width: 639px)" width="480" />
+                  <img 
+                    src={shungiteMacro} 
+                    alt="Elite Shungite Macro" 
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover rounded-lg md:rounded-xl"
+                    width="400"
+                    height="400"
+                  />
+                </picture>
               </motion.div>
               
               {/* Background Glow */}

@@ -12,16 +12,16 @@ export default function Hero() {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden" id="hero">
       {/* Ambient background glows - optimized for performance */}
       <div 
-        className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-full blur-[40px] md:blur-[120px] pointer-events-none"
-        style={{ transform: "translate(-50%, -50%)" }}
+        className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-full blur-[30px] md:blur-[120px] pointer-events-none opacity-60 md:opacity-100"
+        style={{ transform: "translate(-50%, -50%)", willChange: "filter" }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-[30rem] md:h-[30rem] bg-secondary/10 rounded-full blur-[50px] md:blur-[150px] pointer-events-none"
-        style={{ transform: "translate(50%, 50%)", willChange: "transform" }}
+        className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-[30rem] md:h-[30rem] bg-secondary/10 rounded-full blur-[40px] md:blur-[150px] pointer-events-none opacity-50 md:opacity-100"
+        style={{ transform: "translate(50%, 50%)", willChange: "transform, filter" }}
       />
       
       {/* Floating particles - reduced count and complexity on mobile */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden sm:block">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
         {particles.map((_, i) => (
           <motion.div
             key={i}
@@ -45,15 +45,15 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Noise texture overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* Noise texture overlay - Hidden on mobile for better FPS */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] hidden md:block" />
 
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center z-10 pt-16 pb-12 md:pt-20 md:pb-14 max-w-7xl">
         <motion.div 
           className="flex flex-col gap-3.5 md:gap-4.5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm rounded-full px-3.5 py-1 w-fit">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -101,21 +101,21 @@ export default function Hero() {
         </motion.div>
 
         <motion.div 
-          className="relative h-[220px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2"
-          initial={{ opacity: 0, scale: 0.95 }}
+          className="relative h-[220px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2 hero-img-container"
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
         >
           <div className="relative w-full h-full max-w-[320px] sm:max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-2xl xl:shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
-            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 z-10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-90 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40 z-10 hidden sm:block" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-80 z-10 hidden sm:block" />
             <picture>
-              <source srcSet={trishulShieldMobile} media="(max-width: 639px)" />
-              <source srcSet={trishulShieldTablet} media="(max-width: 1023px)" />
+              <source srcSet={trishulShieldMobile} media="(max-width: 639px)" width="400" height="275" />
+              <source srcSet={trishulShieldTablet} media="(max-width: 1023px)" width="640" height="560" />
               <img 
                 src={trishulShield} 
                 alt="Kavach Shield Trishul Edition" 
-                className="w-full h-full object-cover transform md:hover:scale-105 transition-transform duration-[3s]"
+                className="w-full h-full object-cover transform transition-transform duration-[3s]"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -123,12 +123,12 @@ export default function Hero() {
                 height="800"
               />
             </picture>
-            {/* Cinematic border glow */}
-            <div className="absolute inset-0 border border-primary/20 rounded-[2rem] z-20 pointer-events-none" />
+            {/* Cinematic border glow - Reduced on mobile */}
+            <div className="absolute inset-0 border border-primary/10 md:border-primary/20 rounded-[2rem] z-20 pointer-events-none" />
           </div>
           
           {/* Decorative element - Hidden on mobile for performance */}
-          <div className="hidden sm:block absolute -z-10 w-[120%] h-[120%] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" style={{ willChange: 'opacity' }} />
+          <div className="hidden lg:block absolute -z-10 w-[120%] h-[120%] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" style={{ willChange: 'opacity' }} />
         </motion.div>
       </div>
 

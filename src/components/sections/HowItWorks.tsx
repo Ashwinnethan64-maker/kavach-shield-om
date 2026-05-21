@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Paperclip, Radio, ShieldCheck } from "lucide-react";
 import omShieldPhone from "@/assets/images/om-shield-phone.webp";
+import omShieldPhoneMobile from "@/assets/images/om-shield-phone-mobile.webp";
 
 interface Step {
   step: string;
@@ -78,13 +79,18 @@ export default function HowItWorks() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="relative aspect-video md:aspect-[16/10] rounded-[24px] overflow-hidden border border-white/10 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.8),0_0_40px_rgba(212,175,55,0.05)] group bg-[#050816]">
-              <img 
-                src={omShieldPhone} 
-                alt="Kavach Shield Horizontal Showcase" 
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover object-center transform transition-transform duration-[8s] group-hover:scale-105" 
-              />
+              <picture>
+                <source srcSet={omShieldPhoneMobile} media="(max-width: 639px)" width="480" />
+                <img 
+                  src={omShieldPhone} 
+                  alt="Kavach Shield Horizontal Showcase" 
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center transform transition-transform duration-[8s] group-hover:scale-105" 
+                  width="1200"
+                  height="750"
+                />
+              </picture>
               
               {/* Premium Luxury Overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />

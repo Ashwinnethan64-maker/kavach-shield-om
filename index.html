@@ -24,20 +24,40 @@
     <link rel="manifest" href="/site.webmanifest?v=4" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap&font-display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap&font-display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <style>
-      /* Critical CSS for Hero */
+      /* Critical CSS for Hero - Performance optimized */
       :root {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --primary: 47 62% 52%;
+        --background: 229 63% 5%;
+        --foreground: 0 0% 96%;
+        --primary: 46 65% 52%;
       }
-      body { background-color: hsl(240 10% 3.9%); color: hsl(0 0% 98%); margin: 0; }
+      body { 
+        background-color: hsl(229 63% 5%); 
+        color: hsl(0 0% 96%); 
+        margin: 0; 
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
       .hero-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
       @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
-      /* Base rendering tweaks */
-      html { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: hidden; }
+      
+      /* Reserve space for Hero image to prevent CLS */
+      @media (max-width: 639px) { .hero-img-container { min-height: 220px; aspect-ratio: 16/11; } }
+      @media (min-width: 640px) { .hero-img-container { min-height: 350px; aspect-ratio: 16/14; } }
+      
+      /* Faster font rendering */
+      * { font-display: swap; }
+      
+      /* Performance mode for mobile */
+      @media (max-width: 768px) {
+        * { animation-duration: 0.1s !important; transition-duration: 0.1s !important; }
+        .blur-mobile-reduced { filter: blur(20px) !important; }
+      }
     </style>
   </head>
   <body>
