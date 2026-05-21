@@ -58,7 +58,7 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto flex flex-col gap-3">
+        <div className="max-w-3xl mx-auto flex flex-col gap-3.5">
           {faqs.map((faq, i) => (
             <motion.div
               key={faq.question}
@@ -67,10 +67,10 @@ export default function FAQ() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`rounded-2xl border transition-all duration-500 overflow-hidden ${
                 openIndex === i
-                  ? "border-primary/40 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)] ring-1 ring-primary/10"
-                  : "border-white/5 hover:border-white/15"
+                  ? "border-primary/40 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-primary/10"
+                  : "border-white/5 hover:border-white/10 hover:bg-white/[0.02]"
               }`}
-              style={{ background: openIndex === i ? "rgba(11,16,35,0.95)" : "rgba(11,16,35,0.6)" }}
+              style={{ background: openIndex === i ? "rgba(11,16,35,0.98)" : "rgba(11,16,35,0.6)" }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}

@@ -148,52 +148,52 @@ export default function TrustCredibility() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="text-center p-4.5 rounded-xl border border-white/8 bg-card/30 backdrop-blur"
+              className="text-center p-6 md:p-8 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-500 group"
               style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.7), rgba(5,8,22,0.8))" }}
             >
-              <div className="text-2xl md:text-3xl font-serif font-bold text-primary mb-1">
+              <div className="text-3xl md:text-4xl font-serif font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-500">
                 <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
               </div>
-              <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{stat.label}</div>
+              <div className="text-[11px] md:text-xs text-muted-foreground uppercase tracking-[0.2em] font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              className="group p-5 rounded-xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
-              style={{ background: "linear-gradient(145deg, rgba(11,16,35,0.9), rgba(5,8,22,0.95))" }}
+              className="group p-6 md:p-8 rounded-2xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/25 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 flex flex-col justify-between"
+              style={{ background: "linear-gradient(145deg, rgba(11,16,35,0.92), rgba(5,8,22,0.98))" }}
             >
               <div>
-                <div className="flex gap-1 mb-3">
+                <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="w-3 h-3 fill-primary text-primary" />
+                    <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
                   ))}
                 </div>
-                <blockquote className="text-[13px] text-muted-foreground leading-relaxed mb-5 italic opacity-80">
+                <blockquote className="text-sm md:text-[15px] text-muted-foreground leading-relaxed mb-6 italic opacity-90 group-hover:opacity-100 transition-opacity">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
               </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                  <span className="text-[10px] font-semibold text-primary">{t.initials}</span>
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shadow-inner">
+                  <span className="text-[11px] font-bold text-primary">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-foreground">{t.name}</div>
-                  <div className="text-[9px] text-muted-foreground">{t.role}</div>
+                  <div className="text-sm font-bold text-foreground tracking-tight">{t.name}</div>
+                  <div className="text-[10px] md:text-xs text-primary/70 font-medium uppercase tracking-wider">{t.role}</div>
                 </div>
               </div>
             </motion.div>

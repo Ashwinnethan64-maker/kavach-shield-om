@@ -70,10 +70,19 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-row items-center justify-center lg:justify-start gap-3 w-full sm:w-auto pt-2">
-            <Button size="lg" className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95">
+            <Button 
+              size="lg" 
+              className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Buy Now
             </Button>
-            <Button size="lg" variant="outline" className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-sm sm:text-base transition-all group active:scale-95">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="flex-1 sm:flex-none h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-sm sm:text-base transition-all group active:scale-95"
+              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore
               <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </Button>

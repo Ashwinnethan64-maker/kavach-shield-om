@@ -101,14 +101,8 @@ export default function Showcase() {
                 />
               </motion.div>
               
-              {/* Subtle accent image */}
-              <motion.div
-                className="absolute -left-8 top-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-white/5 opacity-40 blur-[1px] z-20"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <img src={trishulShield} alt="Accent" className="w-full h-full object-contain p-4 grayscale" />
-              </motion.div>
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
             </div>
           </motion.div>
 
