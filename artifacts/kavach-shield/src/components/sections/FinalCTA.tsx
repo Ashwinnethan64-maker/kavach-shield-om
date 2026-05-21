@@ -10,7 +10,7 @@ export default function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-40 overflow-hidden min-h-[600px] flex items-center">
+    <section className="relative py-20 overflow-hidden min-h-[450px] flex items-center">
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -47,9 +47,9 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+      <div className="container mx-auto px-6 relative z-10 max-w-7xl" ref={ref}>
         <motion.div
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
@@ -57,32 +57,32 @@ export default function FinalCTA() {
           <motion.div
             animate={inView ? { scale: [1, 1.02, 1] } : {}}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-flex items-center justify-center w-24 h-24 rounded-full border border-primary/30 bg-primary/10 mb-10 shadow-[0_0_50px_rgba(212,175,55,0.2)] backdrop-blur-sm"
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-primary/30 bg-primary/10 mb-6 shadow-[0_0_40px_rgba(212,175,55,0.2)] backdrop-blur-sm"
           >
-            <span className="font-serif text-4xl font-bold text-primary">OM</span>
+            <span className="font-serif text-2xl font-bold text-primary">OM</span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-tight">
-            Carry Sacred Protection{" "}
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+            Carry Sacred Protection <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#FDE08B] to-secondary">
               Everywhere.
             </span>
           </h2>
 
-          <p className="text-xl text-muted-foreground/90 leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-base text-muted-foreground/90 leading-relaxed mb-8 max-w-lg mx-auto opacity-80">
             Join 50,000+ conscious individuals who have chosen to walk through the modern world shielded by ancient wisdom.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Button
               size="lg"
-              className="h-16 px-12 rounded-full text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_50px_rgba(212,175,55,0.5)] hover:shadow-[0_0_80px_rgba(212,175,55,0.7)] transition-all duration-300 hover:scale-105"
+              className="h-12 px-8 rounded-full text-sm font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-300 hover:scale-105"
               data-testid="button-order-now-cta"
             >
               Order Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <p className="text-sm font-medium text-muted-foreground/80 tracking-wide">
+            <p className="text-[11px] font-medium text-muted-foreground/80 tracking-wide">
               ₹1499 &bull; Free Shipping &bull; 30-Day Guarantee
             </p>
           </div>

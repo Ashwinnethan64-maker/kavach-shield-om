@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import trishulShield from "@/assets/images/trishul-shield.png";
-import omShieldPhone from "@/assets/images/om-shield-phone.png";
+import professionalLifestyle from "@/assets/images/professional-lifestyle.png";
+import shungiteMacro from "@/assets/images/shungite-macro.png";
 
 const specs = [
   { label: "Material", value: "Elite Shungite" },
@@ -35,15 +36,15 @@ export default function Showcase() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="showcase" className="relative py-24 overflow-hidden">
+    <section id="showcase" className="relative py-18 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[180px]" />
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="container mx-auto px-6" ref={ref}>
+      <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -51,7 +52,7 @@ export default function Showcase() {
           <div className="inline-flex items-center gap-2 border border-secondary/20 bg-secondary/5 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-medium tracking-widest uppercase text-secondary">Product Details</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
             Precision in Every{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
               Detail
@@ -59,42 +60,51 @@ export default function Showcase() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Layered images */}
           <motion.div
-            className="relative flex items-center justify-center h-[500px]"
+            className="relative flex items-center justify-center h-[350px] md:h-[500px]"
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <div className="absolute w-72 h-72 bg-primary/15 rounded-full blur-[80px]" />
+            <div className="absolute w-full h-full bg-primary/5 rounded-full blur-[120px] scale-150" />
             
-            <div className="relative w-full max-w-[400px] aspect-[4/5]">
-              {/* Primary image */}
+            <div className="relative w-full max-w-[380px] aspect-[4/5]">
+              {/* Primary image - Lifestyle context */}
               <motion.div 
-                className="absolute inset-0 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.15)] z-10"
+                className="absolute inset-x-0 top-0 h-[85%] rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl z-10"
                 whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.6 }}
               >
                 <img 
-                  src={trishulShield} 
-                  alt="Trishul Shield Close-up" 
+                  src={professionalLifestyle} 
+                  alt="Professional using Kavach Shield" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </motion.div>
 
-              {/* Floating secondary image */}
+              {/* Floating secondary image - Product detail */}
               <motion.div
-                animate={{ y: [-8, 8, -8] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-8 -bottom-8 w-48 h-48 rounded-xl overflow-hidden border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.5)] z-20 bg-card/40 backdrop-blur-md p-2"
+                animate={{ y: [-15, 15, -15], rotate: [0, 2, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-4 md:-right-8 bottom-4 w-40 md:w-52 aspect-square rounded-2xl overflow-hidden border border-primary/30 shadow-[0_15px_40px_rgba(212,175,55,0.25)] z-30 bg-card/80 backdrop-blur-xl p-2.5"
               >
                 <img 
-                  src={omShieldPhone} 
-                  alt="OM Shield on Phone" 
-                  className="w-full h-full object-cover rounded-lg"
+                  src={shungiteMacro} 
+                  alt="Elite Shungite Macro" 
+                  className="w-full h-full object-cover rounded-xl"
                 />
+              </motion.div>
+              
+              {/* Subtle accent image */}
+              <motion.div
+                className="absolute -left-8 top-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-white/5 opacity-40 blur-[1px] z-20"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 4, repeat: Infinity }}
+              >
+                <img src={trishulShield} alt="Accent" className="w-full h-full object-contain p-4 grayscale" />
               </motion.div>
             </div>
           </motion.div>
@@ -130,13 +140,13 @@ export default function Showcase() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-                  className="group p-4 rounded-xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/25 transition-all duration-300"
+                  className="group p-3.5 rounded-xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/25 transition-all duration-300"
                   style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.7), rgba(5,8,22,0.8))" }}
                 >
-                  <h4 className="text-sm font-serif font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  <h4 className="text-xs font-serif font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                     {card.title}
                   </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{card.body}</p>
+                  <p className="text-[11px] text-muted-foreground leading-relaxed opacity-70 group-hover:opacity-100">{card.body}</p>
                 </motion.div>
               ))}
             </div>

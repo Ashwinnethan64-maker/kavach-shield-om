@@ -32,59 +32,61 @@ export default function FAQ() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="faq" className="relative py-24 overflow-hidden">
+    <section id="faq" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[200px]" />
       </div>
 
-      <div className="container mx-auto px-6" ref={ref}>
+      <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5">
-            <span className="text-xs font-medium tracking-widest uppercase text-primary">Common Questions</span>
+          <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Concierge Support</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-            Questions,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Answered
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-4 leading-tight">
+            Everything You <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#FDE08B] to-primary">
+              Need to Know
             </span>
           </h2>
+          <p className="text-muted-foreground text-xs md:text-base max-w-xl mx-auto opacity-70">
+            Expert answers for those who settle for nothing less than absolute clarity.
+          </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto flex flex-col gap-3">
+        <div className="max-w-2xl mx-auto flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <motion.div
               key={faq.question}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-xl border transition-all duration-300 overflow-hidden ${
+              className={`rounded-2xl border transition-all duration-500 overflow-hidden ${
                 openIndex === i
-                  ? "border-primary/30 shadow-[0_0_20px_rgba(212,175,55,0.08)] border-l-2 border-l-primary"
-                  : "border-white/8 hover:border-white/15"
+                  ? "border-primary/40 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)] ring-1 ring-primary/10"
+                  : "border-white/5 hover:border-white/15"
               }`}
-              style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.85), rgba(5,8,22,0.9))" }}
+              style={{ background: openIndex === i ? "rgba(11,16,35,0.95)" : "rgba(11,16,35,0.6)" }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left group"
-                data-testid={`faq-toggle-${i}`}
+                className="w-full flex items-center justify-between p-5 md:p-6 text-left group"
               >
-                <span className={`font-serif font-semibold text-base transition-colors ${
-                  openIndex === i ? "text-primary" : "text-foreground group-hover:text-primary/80"
+                <span className={`font-serif font-bold text-base md:text-lg transition-all duration-300 ${
+                  openIndex === i ? "text-primary translate-x-1" : "text-foreground group-hover:text-primary/70"
                 }`}>
                   {faq.question}
                 </span>
-                <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${
+                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shrink-0 ml-4 transition-all duration-500 ${
                   openIndex === i
-                    ? "border-primary/50 bg-primary/10 text-primary"
-                    : "border-white/15 text-muted-foreground group-hover:border-primary/30"
+                    ? "border-primary/50 bg-primary/20 text-primary rotate-[135deg]"
+                    : "border-white/10 text-muted-foreground group-hover:border-primary/30 group-hover:rotate-[45deg]"
                 }`}>
-                  {openIndex === i ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  <Plus className="w-4 h-4 transition-transform duration-500" />
                 </div>
               </button>
 
@@ -94,10 +96,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                   >
-                    <div className="px-5 pb-5 border-t border-white/5">
-                      <p className="text-sm text-muted-foreground leading-relaxed pt-3">
+                    <div className="px-5 md:px-6 pb-6 border-t border-white/5">
+                      <p className="text-[13px] md:text-[15px] text-muted-foreground leading-relaxed pt-5 lg:max-w-[95%] font-sans opacity-80">
                         {faq.answer}
                       </p>
                     </div>

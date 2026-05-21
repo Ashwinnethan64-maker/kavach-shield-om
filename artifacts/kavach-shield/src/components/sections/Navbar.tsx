@@ -22,44 +22,45 @@ export default function Navbar() {
       <motion.header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4"
-            : "bg-transparent py-6"
+            ? "bg-background/90 backdrop-blur-xl border-b border-white/10 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]"
+            : "bg-transparent py-4 md:py-6"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <div className="w-8 h-8 rounded-full border border-primary flex items-center justify-center bg-card shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-              <span className="font-serif text-primary font-bold text-sm">OM</span>
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-7xl">
+          <div className="flex items-center gap-2 cursor-pointer group">
+            <div className="w-7 h-7 rounded-full border border-primary/50 flex items-center justify-center bg-card shadow-[0_0_15px_rgba(212,175,55,0.2)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:border-primary transition-all duration-300">
+              <span className="font-serif text-primary font-bold text-xs">OM</span>
             </div>
-            <span className="font-serif text-xl font-bold tracking-wider text-foreground">
+            <span className="font-serif text-base md:text-lg font-bold tracking-wider text-foreground group-hover:text-primary transition-colors">
               Kavach Shield
             </span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-xs uppercase tracking-[0.2em] font-medium text-muted-foreground hover:text-primary transition-all duration-300 relative group"
               >
                 {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:shadow-[0_0_30px_rgba(212,175,55,0.6)]">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-5 h-10 shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95 text-sm">
               Buy Now
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile/Tablet Menu Button */}
           <button
-            className="md:hidden text-foreground hover:text-primary transition-colors p-2"
+            className="lg:hidden text-foreground hover:text-primary transition-colors p-2 rounded-lg bg-white/5 active:bg-white/10"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open Menu"
           >

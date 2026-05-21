@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, lazy, Suspense } from "react";
 import { Star } from "lucide-react";
 import professionalLifestyle from "@/assets/images/professional-lifestyle.png";
+import omShieldPhone from "@/assets/images/om-shield-phone.png";
 
 const testimonials = [
   {
@@ -85,14 +86,14 @@ export default function TrustCredibility() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="testimonials" className="relative py-24 overflow-hidden">
+    <section id="testimonials" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[180px]" />
       </div>
 
-      <div className="container mx-auto px-6" ref={ref}>
+      <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -100,7 +101,7 @@ export default function TrustCredibility() {
           <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/5 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-medium tracking-widest uppercase text-primary">Trusted Worldwide</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
             Worn by Those Who{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Know Better
@@ -108,72 +109,90 @@ export default function TrustCredibility() {
           </h2>
         </motion.div>
 
-        {/* Hero image 16:9 container */}
+        {/* Hero image container - optimized at 2:1 for cinematic feel without excessive crop */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="relative w-full max-w-5xl mx-auto aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden mb-16 shadow-[0_0_40px_rgba(212,175,55,0.1)] border border-primary/20"
+          className="relative w-full max-w-4xl mx-auto aspect-[16/10] md:aspect-[2.4/1] rounded-[2rem] overflow-hidden mb-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10 group"
         >
-          <img src={professionalLifestyle} alt="Professional using Kavach Shield" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <img 
+            src={omShieldPhone} 
+            alt="Kavach Shield on Device" 
+            className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-[3s] ease-out" 
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           
-          <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 bg-card/60 backdrop-blur-md border border-white/10 rounded-xl p-4 md:p-6 shadow-xl">
-            <p className="text-base md:text-lg font-serif font-medium text-white max-w-sm">
-              "Trusted by professionals across India for uncompromised energetic safety."
+          {/* Minimized luxury overlay card */}
+          <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-card/40 backdrop-blur-2xl border border-white/10 rounded-2xl p-3 md:p-4.5 shadow-2xl max-w-[190px] md:max-w-[240px] group/card hover:bg-card/50 transition-all duration-500">
+            <div className="flex gap-0.5 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-2 md:w-2.5 h-2 md:h-2.5 fill-primary text-primary" />
+              ))}
+            </div>
+            <p className="text-[10px] md:text-[12px] font-serif font-medium text-white/90 italic leading-snug">
+              "Finally, a product that values my health as much as my style. The energetic shift is palpable."
             </p>
+            <div className="mt-3 flex items-center gap-2">
+              <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-[9px] md:text-[11px]">AK</div>
+              <div>
+                <p className="text-[8px] md:text-[9.5px] font-bold text-white uppercase tracking-tighter">Ananya Kapoor</p>
+                <p className="text-[7px] md:text-[8px] text-primary/80 font-medium">Holistic Designer</p>
+              </div>
+            </div>
           </div>
           {/* Subtle gold border glow */}
-          <div className="absolute inset-0 border-[2px] border-primary/30 rounded-2xl pointer-events-none mix-blend-overlay" />
+          <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none" />
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="text-center p-6 rounded-xl border border-white/8 bg-card/30 backdrop-blur"
+              className="text-center p-4.5 rounded-xl border border-white/8 bg-card/30 backdrop-blur"
               style={{ background: "linear-gradient(135deg, rgba(11,16,35,0.7), rgba(5,8,22,0.8))" }}
             >
-              <div className="text-3xl md:text-4xl font-serif font-bold text-primary mb-1">
+              <div className="text-2xl md:text-3xl font-serif font-bold text-primary mb-1">
                 <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
               </div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-5 mb-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              className="group p-6 rounded-xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
+              className="group p-5 rounded-xl border border-white/8 bg-card/30 backdrop-blur hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
               style={{ background: "linear-gradient(145deg, rgba(11,16,35,0.9), rgba(5,8,22,0.95))" }}
             >
               <div>
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
+                    <Star key={j} className="w-3 h-3 fill-primary text-primary" />
                   ))}
                 </div>
-                <blockquote className="text-sm text-muted-foreground leading-relaxed mb-6 italic">
+                <blockquote className="text-[13px] text-muted-foreground leading-relaxed mb-5 italic opacity-80">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-primary">{t.initials}</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
+                  <span className="text-[10px] font-semibold text-primary">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                  <div className="text-[10px] text-muted-foreground">{t.role}</div>
+                  <div className="text-xs font-semibold text-foreground">{t.name}</div>
+                  <div className="text-[9px] text-muted-foreground">{t.role}</div>
                 </div>
               </div>
             </motion.div>
@@ -190,9 +209,9 @@ export default function TrustCredibility() {
           {trustBadges.map((badge) => (
             <div
               key={badge}
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-xs font-medium text-primary tracking-wide"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/15 bg-primary/5 text-[10px] md:text-[11px] font-medium text-primary tracking-wide shadow-sm"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span className="w-1 h-1 rounded-full bg-primary/60" />
               {badge}
             </div>
           ))}

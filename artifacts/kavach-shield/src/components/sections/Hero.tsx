@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import shungiteMacro from "@/assets/images/shungite-macro.png";
+import trishulShield from "@/assets/images/trishul-shield.png";
 
 export default function Hero() {
   const particles = Array.from({ length: 15 });
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center overflow-hidden" id="hero">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden" id="hero">
       {/* Ambient background glows */}
       <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/25 rounded-full blur-[120px] pointer-events-none"
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-secondary/10 rounded-full blur-[150px] pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-secondary/15 rounded-full blur-[150px] pointer-events-none"
         style={{ transform: "translate(50%, 50%)" }}
       />
       
@@ -25,12 +25,12 @@ export default function Hero() {
             key={i}
             className="absolute w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-primary/40"
             initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000), 
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+              x: Math.random() * 100 + "%", 
+              y: Math.random() * 100 + "%",
               opacity: 0 
             }}
             animate={{ 
-              y: [null, Math.random() * -100 - 50],
+              y: [null, "-20vh"],
               opacity: [0, 0.5, 0]
             }}
             transition={{ 
@@ -46,11 +46,11 @@ export default function Hero() {
       {/* Noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center z-10 pt-24 pb-20">
+      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center z-10 pt-24 pb-16 max-w-7xl">
         <motion.div 
-          className="flex flex-col gap-6 max-w-2xl"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="flex flex-col gap-5 max-w-xl text-center lg:text-left items-center lg:items-start order-2 lg:order-1"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
           <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm rounded-full px-4 py-1.5 w-fit">
@@ -58,54 +58,57 @@ export default function Hero() {
             <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">Premium EMF Protection</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] tracking-tight">
             Sacred Protection <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#FDE08B] to-primary">
               for the Modern World
             </span>
           </h1>
           
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+          <p className="text-base text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
             Luxury EMF protection crafted with sacred symbolism and premium shungite materials. Designed for those who demand both energetic purity and aesthetic perfection.
           </p>
           
-          <div className="flex flex-wrap items-center gap-3 pt-2">
-            <Button size="lg" className="h-12 px-6 sm:h-14 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base sm:text-lg shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all hover:scale-105">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <Button size="lg" className="h-11 px-6 sm:h-12 sm:px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all hover:scale-105 active:scale-95">
               Buy Now
             </Button>
-            <Button size="lg" variant="outline" className="h-12 px-6 sm:h-14 sm:px-8 rounded-full border-white/20 hover:bg-white/5 hover:text-primary text-foreground text-base sm:text-lg transition-all">
+            <Button size="lg" variant="outline" className="h-11 px-6 sm:h-12 sm:px-8 rounded-full border-white/20 hover:bg-white/5 backdrop-blur-sm hover:text-primary text-foreground text-base transition-all group active:scale-95">
               Explore Features
-              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4 font-semibold">As seen in</p>
-            <div className="flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="mt-10 pt-6 border-t border-white/10 w-full lg:w-fit">
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-3 font-semibold opacity-60">As seen in</p>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
               <span className="font-serif font-bold text-lg">Forbes</span>
-              <span className="font-sans font-bold text-lg tracking-tight">Economic Times</span>
-              <span className="font-serif italic text-lg">Times of India</span>
+              <span className="font-sans font-bold text-lg tracking-tighter">Economic Times</span>
+              <span className="font-serif italic text-lg">TOI</span>
             </div>
           </div>
         </motion.div>
 
         <motion.div 
-          className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center w-full"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center w-full order-1 lg:order-2"
+          initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full max-w-lg mx-auto rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background opacity-80 z-10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 z-10" />
+          <div className="relative w-full h-full max-w-[400px] lg:max-w-none mx-auto rounded-[1.5rem] overflow-hidden shadow-[0_20px_60px_rgba(212,175,55,0.2)]">
+            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-90 z-10" />
             <img 
-              src={shungiteMacro} 
-              alt="Shungite Macro Texture" 
-              className="w-full h-full object-cover"
+              src={trishulShield} 
+              alt="Kavach Shield Trishul Edition" 
+              className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-[3s]"
             />
             {/* Cinematic border glow */}
-            <div className="absolute inset-0 border border-primary/20 rounded-3xl z-20 pointer-events-none" />
+            <div className="absolute inset-0 border border-primary/20 rounded-[2rem] z-20 pointer-events-none" />
           </div>
+          
+          {/* Decorative element */}
+          <div className="absolute -z-10 w-[120%] h-[120%] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl opacity-50 animate-pulse" />
         </motion.div>
       </div>
 
