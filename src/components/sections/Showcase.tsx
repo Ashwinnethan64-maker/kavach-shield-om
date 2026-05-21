@@ -38,8 +38,8 @@ export default function Showcase() {
   return (
     <section id="showcase" className="relative py-14 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[180px]" />
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[80px] md:blur-[180px]" />
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[60px] md:blur-[150px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>

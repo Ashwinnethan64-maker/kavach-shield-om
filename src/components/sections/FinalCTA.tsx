@@ -23,17 +23,17 @@ export default function FinalCTA() {
         <div className="absolute inset-0 bg-background/60" />
       </div>
 
-      {/* Cinematic gradient overlays */}
+      {/* Cinematic gradient overlays - performance optimized */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.08) 0%, rgba(255,107,0,0.04) 40%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 70%)",
           }}
         />
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             background:
               "radial-gradient(ellipse 50% 80% at 50% 100%, rgba(212,175,55,0.06) 0%, transparent 60%)",

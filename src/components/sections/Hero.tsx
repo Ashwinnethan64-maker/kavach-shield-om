@@ -12,11 +12,11 @@ export default function Hero() {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden" id="hero">
       {/* Ambient background glows - optimized for performance */}
       <div 
-        className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-full md:blur-[120px] blur-[80px] pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-full blur-[40px] md:blur-[120px] pointer-events-none"
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-[30rem] md:h-[30rem] bg-secondary/10 rounded-full md:blur-[150px] blur-[100px] pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-[30rem] md:h-[30rem] bg-secondary/10 rounded-full blur-[50px] md:blur-[150px] pointer-events-none"
         style={{ transform: "translate(50%, 50%)", willChange: "transform" }}
       />
       

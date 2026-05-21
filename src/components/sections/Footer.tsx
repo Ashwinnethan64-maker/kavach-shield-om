@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 pt-12 pb-6 overflow-hidden bg-background">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/3 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/3 rounded-full blur-[60px] md:blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl">
@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4 footer-logo-container">
-              <div className="w-6.5 h-6.5 rounded-full border border-primary/40 flex items-center justify-center bg-primary/10 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+              <div className="w-6.5 h-6.5 rounded-full border border-primary/40 flex items-center justify-center bg-primary/10 shadow-[0_0_10px_rgba(212,175,55,0.1)] md:shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                 <span className="font-serif text-primary font-bold text-[10px]">OM</span>
               </div>
               <span className="font-serif text-base font-bold tracking-wider text-foreground">Kavach Shield</span>

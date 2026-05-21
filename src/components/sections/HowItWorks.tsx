@@ -43,7 +43,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="relative py-14 md:py-18 overflow-hidden bg-background">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/5 rounded-full blur-[60px] md:blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl" ref={ref}>

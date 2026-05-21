@@ -55,7 +55,7 @@ export default function Features() {
   return (
     <section id="features" className="relative py-14 md:py-18 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] md:blur-[200px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>

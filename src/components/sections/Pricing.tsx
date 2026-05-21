@@ -22,7 +22,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="relative py-14 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/6 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/6 rounded-full blur-[120px] md:blur-[180px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
@@ -51,10 +51,10 @@ export default function Pricing() {
             className="relative w-full max-w-[320px] sm:max-w-[400px] group"
           >
             {/* Pulsing border animation wrapper */}
-            <div className="absolute inset-0 rounded-3xl animate-pulse opacity-50 bg-gradient-to-br from-primary/30 via-transparent to-secondary/30 blur-md" />
+            <div className="absolute inset-0 rounded-3xl animate-pulse opacity-50 bg-gradient-to-br from-primary/30 via-transparent to-secondary/30 blur-sm md:blur-md" />
 
             <div
-              className="relative rounded-3xl border border-primary/40 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] transition-all duration-500"
+              className="relative rounded-3xl border border-primary/40 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.05)] md:shadow-[0_0_20px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_40px_rgba(212,175,55,0.2)] transition-all duration-500"
               style={{ background: "linear-gradient(145deg, rgba(11,16,35,0.95), rgba(5,8,22,0.98))" }}
             >
               {/* Limited edition banner gradient from primary to secondary */}
@@ -93,7 +93,7 @@ export default function Pricing() {
 
                 <Button
                   size="lg"
-                  className="w-full h-11 md:h-12 rounded-full text-[13px] md:text-sm font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_rgba(212,175,55,0.3)] active:scale-95 transition-all duration-300"
+                  className="w-full h-11 md:h-12 rounded-full text-[13px] md:text-sm font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(212,175,55,0.2)] md:shadow-[0_0_30px_rgba(212,175,55,0.3)] active:scale-95 transition-all duration-300"
                 >
                   Order Now — Claim Your Shield
                 </Button>

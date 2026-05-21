@@ -34,7 +34,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="relative py-14 md:py-18 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[200px]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[100px] md:blur-[200px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl" ref={ref}>
